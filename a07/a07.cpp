@@ -62,14 +62,16 @@ int main()
         
         else if (choice == 'b'){
             cout << "Which band would you like to search for?: ";
-            cin >> searchBand;
+            cin.ignore();
+            getline(cin, searchBand);
             showCDsByBand(count, searchBand);
             
         }
         
         else if (choice == 't'){
             cout << "Which title would you like to search for?: ";
-            cin >> searchTitle;
+            cin.ignore();
+            getline(cin, searchTitle);
             showCDsByTitle(count, searchTitle);
         }
         
@@ -128,7 +130,7 @@ void showCDsByBand (int count, string name){
         }
         // done with loop, output counting variable
     }
-    cout << j << " records found";
+    cout << "-- " << j << " record(s) found --";
 }
 
 void showCDsByTitle (int count, string title){
@@ -139,5 +141,5 @@ void showCDsByTitle (int count, string title){
             j++;
         }
     }
-    cout << j << " records found";
+    cout << "-- " << j << " record(s) found --";
 }
